@@ -3080,8 +3080,8 @@ window.KARTENDATEN = {ringe:[[[22.62,58.62],[22.96,58.61],[23.32,58.45],[23.13,5
       beats: [
         [24, 'Die Karte des Mittelmeerraums und Europas, darüber beide Netze: goldene Straßen und weiße Seewege, lila Dunst fließt über beide. Dann blendet das Bild ab. Der Satz erscheint in römischer Inschriftenschrift: „Nicht der Riss machte das Reich verwundbar, sondern das Netz, das es zusammenhielt.“',
           'Am Anfang stand ein Riss im Tempel, und die Menschen glaubten, er habe die Seuche gebracht. Aber die Seuche kam nicht aus dem Riss, sie kam über das Netz. Nicht der Riss machte das Reich verwundbar, sondern das Netz, das es zusammenhielt. Und 1200 Jahre später ist es dasselbe Netz, nur mit Schiffen.'],
-        [22, 'Schwarz, in der Ferne ein schwacher Schein des Tempelrisses. Die Diskussionsfrage erscheint in römischer Schrift: „Corona hatten wir alle. Was hat sich seit der Pest verändert, und was ist gleich geblieben?“ Darunter zwei Anhaltspunkte: Ragusa 1377 (30 Tage Isolierung für Ankömmlinge) und Paris 1348 (Planeten und Miasma, Verfolgung trotz päpstlichen Verbots).',
-          'Und damit lasse ich euch mit einer Frage allein. Beim Tempel war es der Frevler, 1348 waren es die Brunnenvergifter. Und Corona hatten wir alle. Was hat sich seit der Pest verändert, und was ist gleich geblieben? Geschichte soll uns ja helfen, aus Vergangenem zu lernen. Zwei Anhaltspunkte für eure Diskussion: 1377 ordnet die Hafenstadt Ragusa an, dass Ankömmlinge dreißig Tage isoliert werden. Und 1348 erklären die Pariser Ärzte die Seuche weiter mit Planeten und Miasma, während jüdische Gemeinden trotz päpstlichen Verbots verfolgt werden.']
+        [22, 'Schwarz, in der Ferne ein schwacher Schein des Tempelrisses. Die Diskussionsfrage erscheint in römischer Schrift: „Haben die Menschen im Mittelalter aus früheren Seuchen wie der Antoninischen Pest gelernt?“ Darunter drei Karten: Galen und das Miasma (Paris 1348 erklärt die Seuche noch damit), Schuldige (Tempelfrevler 165, Brunnenvergifter 1348, Verfolgung trotz päpstlichen Verbots) und Ragusa 1377 (30 Tage Isolierung für Ankömmlinge).',
+          'Und damit lasse ich euch mit einer Frage allein. Haben die Menschen im Mittelalter aus früheren Seuchen wie der Antoninischen Pest gelernt? Geschichte soll uns ja helfen, aus Vergangenem zu lernen. Drei Anhaltspunkte für eure Diskussion: Galens Lehre vom schlechten Dunst gilt fast 1200 Jahre, und 1348 erklären die Pariser Ärzte die Seuche immer noch mit Planeten und Miasma. Beim Tempel war es der Frevler, 1348 sind es die Brunnenvergifter, und jüdische Gemeinden werden trotz päpstlichen Verbots verfolgt. Und erst 1377 ordnet die Hafenstadt Ragusa an, dass Ankömmlinge dreißig Tage isoliert werden.']
       ]
     },
     {
@@ -7551,14 +7551,15 @@ window.MuenzeKunst = { d: "m 311.1,609.4 c -2.2,-0.2 -4.5,-0.7 -5.1,-1.3 -0.6,-0
       svgIn(fr, '<rect width="1920" height="1080" fill="#02030a"/>');
       const ris = Tempel.rissDaten;
       const rl = ris.map((pts, i) => { const d = K.pfad(pts); return { a: El('path', { d, fill: 'none', stroke: '#6a2ab8', 'stroke-width': i ? 8 : 14, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.2 }, fr), b: El('path', { d, fill: 'none', stroke: '#d9a8ff', 'stroke-width': i ? 2.4 : 4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', opacity: 0.5 }, fr) }; });
-      const lq = ['Corona hatten wir alle.', 'Was hat sich seit der Pest verändert,', 'und was ist gleich geblieben?'].map(z => z.toUpperCase());
+      const lq = ['Haben die Menschen im Mittelalter', 'aus früheren Seuchen wie der', 'Antoninischen Pest gelernt?'].map(z => z.toUpperCase());
       const frage = lq.map((z, i) => { const q = El('g', { opacity: 0 }, S.fg); svgIn(q, '<text x="960" y="' + (330 + i * 92) + '" text-anchor="middle" fill="#f4eedd" style="font-family:' + ROEM.replace(/"/g, "'") + ';letter-spacing:4px" font-size="52" stroke="#02030a" stroke-width="8" paint-order="stroke">' + z.replace(/&/g, '&amp;') + '</text>'); return q; });
       const dis = El('g', { opacity: 0 }, S.fg); svgIn(dis, Kn.txt(960, 214, 'DISKUSSION', 34, '#c9993a', { roem: true, abstand: 14 }) + '<path d="M820 240H1100" stroke="#c9993a" stroke-width="2.5"/>');
       // zwei Anhaltspunkte fuer die Diskussion: ein Zeichen des Lernens, ein Zeichen des Gegenteils; die Antwort bleibt offen
       const anh = [
-        { x: 150, farbe: '#7fd08a', kopf: '1377 · RAGUSA', zeilen: ['Die Hafenstadt Ragusa (Dubrovnik) ordnet an:', 'Ankömmlinge werden 30 Tage isoliert.', 'Später werden daraus 40 Tage: die „Quarantäne“.'] },
-        { x: 990, farbe: '#e0644c', kopf: '1348 · PARIS UND DIE VERFOLGUNGEN', zeilen: ['Die Pariser Ärzte erklären die Seuche weiter', 'mit Planeten und Miasma. Jüdische Gemeinden', 'werden trotz päpstlichen Verbots verfolgt.'] }
-      ].map(q => { const g = El('g', { opacity: 0 }, S.fg); svgIn(g, '<rect x="' + q.x + '" y="690" width="780" height="262" rx="18" fill="#07090f" fill-opacity=".9" stroke="' + q.farbe + '" stroke-width="3.5"/><rect x="' + q.x + '" y="690" width="9" height="262" rx="4" fill="' + q.farbe + '"/>' + Kn.txt(q.x + 36, 746, q.kopf, 29, q.farbe, { anker: 'start', roem: true, abstand: 3, gew: 700 }) + q.zeilen.map((z, i) => Kn.txt(q.x + 36, 806 + i * 46, z, 30, '#f4efe0', { anker: 'start' })).join('')); return g; });
+        { x: 90, farbe: '#e8b84a', kopf: 'GALEN · MIASMA', zeilen: ['Galens Lehre vom „schlechten Dunst“', 'gilt fast 1200 Jahre. Paris 1348', 'erklärt die Seuche noch damit.'] },
+        { x: 680, farbe: '#e0644c', kopf: 'SCHULDIGE', zeilen: ['165: der Tempelfrevler. 1348: die', 'Brunnenvergifter. Jüdische Gemeinden', 'trotz päpstlichen Verbots verfolgt.'] },
+        { x: 1270, farbe: '#7fd08a', kopf: '1377 · RAGUSA', zeilen: ['Ankömmlinge werden 30 Tage isoliert,', 'später 40 Tage: die „Quarantäne“.'] }
+      ].map(q => { const g = El('g', { opacity: 0 }, S.fg); svgIn(g, '<rect x="' + q.x + '" y="690" width="560" height="262" rx="18" fill="#07090f" fill-opacity=".9" stroke="' + q.farbe + '" stroke-width="3.5"/><rect x="' + q.x + '" y="690" width="9" height="262" rx="4" fill="' + q.farbe + '"/>' + Kn.txt(q.x + 34, 746, q.kopf, 28, q.farbe, { anker: 'start', roem: true, abstand: 3, gew: 700 }) + q.zeilen.map((z, i) => Kn.txt(q.x + 34, 806 + i * 46, z, 27, '#f4efe0', { anker: 'start' })).join('')); return g; });
       const rauch2 = FX.rauch([{ x: 960, y: 1040, breite: 700, hoehe: 14, t0: A1 + 1, t1: A1 + 90, dichte: 4.5, vy: -26, r0: 80, r1: 260, leben: [6, 10], alpha: 0.28 }], { seed: 92, flimmern: 0.1 });
       S.fx((ctx, t, sz, ta) => { if (t > A1 + 0.5) rauch2(ctx, t, ta); }, { leerlauf: 4, ok: t => t - 2 > A1 + 8 });
       Kn.staub(S, { n: 50, seed: 93, alpha: 0.4, farbe: '#d9a8ff', staerke: t => smooth((t - A1) / 2) });
@@ -7567,7 +7568,7 @@ window.MuenzeKunst = { d: "m 311.1,609.4 c -2.2,-0.2 -4.5,-0.7 -5.1,-1.3 -0.6,-0
         fr.setAttribute('opacity', smooth((u - 0.1) / 1.4).toFixed(3));
         rl.forEach((r, i) => { r.b.setAttribute('opacity', (0.42 + 0.14 * Math.sin(ta * 0.9 + i * 2)).toFixed(3)); r.a.setAttribute('opacity', (0.18 + 0.08 * Math.sin(ta * 0.9 + i * 2)).toFixed(3)); });
         dis.setAttribute('opacity', smooth((u - 2.2) / 1.0).toFixed(3));
-        anh.forEach((q, i) => { const v = EASE.out3(clamp((u - (10.2 + i * 1.6)) / 1.2)); q.setAttribute('opacity', v.toFixed(3)); q.setAttribute('transform', 'translate(0 ' + f1((1 - v) * 16) + ')'); });
+        anh.forEach((q, i) => { const v = EASE.out3(clamp((u - (10.2 + i * 1.3)) / 1.2)); q.setAttribute('opacity', v.toFixed(3)); q.setAttribute('transform', 'translate(0 ' + f1((1 - v) * 16) + ')'); });
         frage.forEach((q, i) => { const v = EASE.out3(clamp((u - (3.0 + i * 1.7)) / 1.4)); q.setAttribute('opacity', v.toFixed(3)); q.setAttribute('transform', 'translate(0 ' + f1((1 - v) * 14) + ')'); });
       });
       S.kamera([[0, 960, 540, 1.0], [1e4, 960, 540, 1.0, 'lin']]);
